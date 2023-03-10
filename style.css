@@ -1,0 +1,75 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.clause {
+    border-top: #000 1px solid ;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.clause:last-child {
+    margin-bottom: 0;
+}
+
+.clause-content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: .25s ease-in-out;
+}
+
+
+.clause label {
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    line-height: 3;
+    cursor: pointer;
+}
+
+.clause label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    transition: all .35s;
+}
+
+.clause-content img {
+    width: 450px;
+    height: 450px;
+}
+
+.clause label:hover ~ .clause-content-wrapper {
+    overflow: visible;
+    max-height: 100vh;
+}
+
+.clause input:checked ~ .clause-content-wrapper {
+    overflow: visible;
+    max-height: 100vh;
+}
+
+
+.clause input[type=checkbox] + label::after {
+    content: "+";
+}
+
+.clause input[type=checkbox]:checked + label::after {
+    transform: rotate(315deg);
+}
+
+
+input[type="checkbox"] {
+    display: none;
+}
