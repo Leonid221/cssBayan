@@ -8,6 +8,10 @@ body {
     margin: 0 auto;
 }
 
+.container label {
+    color: cornflowerblue;
+}
+
 .clause {
     border-top: #000 1px solid ;
     margin-bottom: 20px;
@@ -48,6 +52,10 @@ body {
 .clause-content img {
     width: 450px;
     height: 450px;
+}
+
+.container:hover label {
+    color: #000;
 }
 
 .clause label:hover ~ .clause-content-wrapper {
