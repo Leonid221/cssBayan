@@ -41,12 +41,16 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    display: block;
+    display: none;
     width: 3em;
     height: 3em;
     line-height: 3;
     text-align: center;
     transition: all .35s;
+}
+
+.container:hover .clause label::after {
+    display: block;
 }
 
 .clause-content img {
