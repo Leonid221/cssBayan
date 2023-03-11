@@ -77,6 +77,10 @@ body {
     content: "+";
 }
 
+.clause input[type=checkbox]:hover + label::after {
+    transform: rotate(315deg);
+}
+
 .clause input[type=checkbox]:checked + label::after {
     transform: rotate(315deg);
 }
