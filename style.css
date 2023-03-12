@@ -1,0 +1,115 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 750px;
+    margin: 0 auto;
+}
+
+.container label {
+    color: cornflowerblue;
+}
+
+.clause {
+    border-top: #000 1px solid ;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.clause:last-child {
+    margin-bottom: 0;
+}
+
+.clause-content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: .25s ease-in-out;
+}
+
+
+.clause label {
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    line-height: 3;
+    cursor: pointer;
+}
+
+.clause label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    transition: all .35s;
+}
+
+.container:hover .clause label::after {
+    display: block;
+}
+
+.clause-content img {
+    width: 550px;
+    height: 550px;
+}
+
+.container:hover label {
+    color: #000;
+}
+
+.clause label:hover ~ .clause-content-wrapper {
+    overflow: visible;
+    max-height: 100vh;
+}
+
+.clause input:checked ~ .clause-content-wrapper {
+    overflow: visible;
+    max-height: 100vh;
+}
+
+
+.clause input[type=checkbox] + label::after {
+    content: "+";
+}
+
+.clause input[type=checkbox]:hover + label::after {
+    transform: rotate(315deg);
+}
+
+.clause input[type=checkbox]:checked + label::after {
+    transform: rotate(315deg);
+}
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media screen and (max-width: 820px) {
+    .container {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .clause-content img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        width: 350px;
+        margin: 0 auto;
+    }
+
+    .clause-content img {
+        width: 250px;
+        height: 250px;
+    }
+}
